@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Service";
+}
+    <header id="m-header">
+        <h2>HAIRCUT AND SPA</h2>
+        <div class="links">
+            <span id="link">@Html.ActionLink("HOME", "Index", "Home", new { @id = "link" })</span>
+
+            @if (Session["UserId"] != null)
+            {
+                <span id="link"> @Html.ActionLink(Session["UserName"].ToString().ToUpper(), "MProfile", "Home", new { @id = "link" })</span>
+                <span id="link"> @Html.ActionLink("LOGOUT", "Logout", "Home", new { @id = "link" })</span>
+            }
+            else
+            {
+                <span id="link"> @Html.ActionLink("ABOUT", "About", "Home", new { @id = "link" })</span>
+                <span id="link"> @Html.ActionLink("LOGIN", "Login", "Home", new { @id = "link" })</span>
+            }
+        </div>
+    </header>
+<div class="service-content">
+    <div class="services">
+        <h1>SERVICE WE PROVIDE</h1>
+        @foreach (DatabaseFirstApp.Models.MService service in Model)
+        {<div class="s">
+                <div class="service-card">
+                    <div class="image-holder">
+                        <img src="@Url.Content(@service.Image)" height="200px" width="250px">
+                    </div>
+                    <div class="service1">
+                        <h1>@service.ServiceName</h1>
+                        <h2 id="desc">@service.ServiceDescription</h2>
+                    </div>
+                    <div class="service">
+
+                       
+                        <div> <h2 id="desc">Rs. @service.Cost/-</h2></div>
+
+                        <input type="button" class="formBtn" value="Book" onclick="location.href='@Url.Action("MBook","Home",new{id = service.ServiceId},null)'" />
+                       
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+

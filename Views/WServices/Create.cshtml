@@ -1,0 +1,41 @@
+﻿@model DatabaseFirstApp.Models.Service
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<a class="admin-overlay" id="logout" href="/WServices/Logout">
+    <img src="~/Images/logouticon.png" height="60px" width="60px" />
+</a>
+<div id="bodyServc">
+    <div class="dashHead">
+        NEW SERVICE (WOMEN)
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="editbg">
+            <div class="editContent">
+                <div class="editForm">
+
+                    @Html.EditorFor(model => model.ServiceName, new { htmlAttributes = new { @class = "editInput", @placeholder = "Service Name" } })
+                    @Html.ValidationMessageFor(model => model.ServiceName, "", new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.ServiceDescription, new { htmlAttributes = new { @class = "editInput", @placeholder = "Service Description" } })
+                    @Html.ValidationMessageFor(model => model.ServiceDescription, "", new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "editInput", @placeholder = "Service Cost" } })
+                    @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger" })
+
+
+
+                    @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "editInput", @placeholder = "Image path" } })
+                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+
+                    <input type="submit" value="Create" class="editBtn" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,623 @@
+﻿* {
+    margin: 0;
+}
+#overlay-title {
+    position: fixed;
+    display: block;
+    width: 60vw;
+    height: 30%;
+    top: 65%;
+    left: 0;
+    right: 0;
+    bottom: 40;
+    background-color: rgba(35, 35, 35, 0.6);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 3vw;
+    color: aliceblue;
+}
+
+.h-links {
+    margin: 0.5vw 1vw 0vw 1vw;
+    font-size: medium;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(36, 35, 35);
+    opacity: 0.8;
+}
+
+#h-link {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: larger;
+    font-weight: bold;
+    margin: 2vw;
+}
+
+    #h-link:active,
+    #h-link:hover {
+        color: blueviolet;
+    }
+
+.bodyHome {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('menbg.jpg');
+}
+.slot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.body-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top {
+    height: 45%;
+    color: blueviolet;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: x-large;
+    align-items: flex-end;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 4%;
+    height: 80%;
+    width: 60%;
+    text-align: center;
+}
+
+.mid {
+    height: 10%;
+    width: 97vw;
+    color: #fff;
+    opacity: 0.6;
+    font-size: 1vw;
+}
+
+.bot {
+    height: 45%;
+    color: rgb(255, 0, 255);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: x-large;
+    align-items: flex-start;
+}
+
+.service-box {
+    width: 15%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: rgb(0, 0, 0);
+    margin: 1%;
+    height: 96%;
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0.6;
+}
+
+.m-box:hover,
+.m-box:focus {
+    background-color: blueviolet;
+    opacity: 1;
+    height: 98%;
+    width: 98%;
+}
+
+.w-box:hover,
+.w-box:focus {
+    background-color: rgb(255, 0, 255);
+    opacity: 1;
+    height: 98%;
+    width: 98%;
+}
+
+.bot-foot {
+    padding-top: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+    width: 60%;
+    text-align: center;
+}
+
+#m-header {
+    padding: 1.5vw 1vw 1.5vw 2vw;
+    background-color: blueviolet;
+    color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position:fixed;
+    justify-content: space-between;
+    width: 97vw;
+}
+#f-header {
+    padding: 1.5vw 1vw 1.5vw 2vw;
+    background-color: rgb(255,0,255);
+    color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    justify-content: space-between;
+    width: 97vw;
+}
+
+.links {
+    margin: 0.5vw 1vw 0vw 1vw;
+}
+#dd{
+    text-indent:40%
+}
+
+#link {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: larger;
+    margin: 2vw
+}
+
+    #link:active,
+    #link:hover {
+        color: rgb(70, 242, 248);
+        text-decoration:none;
+    }
+
+.service-content {
+    padding: 3vh;
+    padding-top: 10vh;
+}
+
+.services {
+    margin-top: 6vh;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+    
+}
+.s {
+    margin: 4vh;
+    padding: 2vh;
+    border-bottom-width: 0.2vh;
+    width:70vw;
+    background-color:aliceblue;
+}
+    .s:hover {
+        border-bottom-color: blueviolet;
+        border-bottom-style: solid;
+        background-color: azure;
+    }
+.f-s {
+    margin: 4vh;
+    padding: 2vh;
+    border-bottom-width: 0.2vh;
+    width: 70vw;
+    background-color: aliceblue;
+}
+
+    .f-s:hover {
+        border-bottom-color: rgb(255,0,255);
+        border-bottom-style: solid;
+        background-color: azure;
+    }
+.service-card{  
+    display: flex;
+    flex-direction: row;
+
+    justify-content:space-between
+}
+
+.image-holder {
+    width: 250px;
+    height:200px;
+    padding: 2vh;
+    object-fit:contain
+}
+.service1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 500px;
+    padding: 4vh;
+    justify-content:space-evenly
+    
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 500px;
+    padding: 2vh;
+    justify-content: space-evenly;
+   }
+#desc{
+    font-weight:lighter;
+    font-family:Calibri
+}
+.f-book-body-bg {
+    background-image: url("women.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-position: 0;
+    background-size: cover;
+}
+
+#f-book-overlay {
+    position: fixed;
+    display: flex;
+    width: 40%;
+    height: 88%;
+    top: 10%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#f-bookContent {
+    width: 40vw;
+    padding: 5vw;
+    color: rgb(255,0,255);
+    text-align: center;
+}
+.bookForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50vw;
+}
+.f-bookInput {
+    margin: 1vw;
+    height: 20px;
+    border-width: 0 0 2px 0;
+    padding: 0 0 5px 0;
+    border-color: rgb(255,0,255);
+    font-size: larger;
+    text-align: center;
+    color: rgb(255,0,255);
+    background-color: transparent;
+}
+.f-bookInput:focus {
+        outline: none;
+        border-color: rgb(255,0,255);
+    }
+
+.f-bookBtn {
+    margin: 2vw 1vw 2vw 1vw;
+    font-size: larger;
+    padding: 5px;
+    color: aliceblue;
+    background-color: rgb(255,0,255);
+    cursor: pointer;
+    width:max-content;
+}
+
+    .f-bookBtn:hover,
+    .f-bookBtn:focus {
+        background-color: aliceblue;
+        color: rgb(255,0,255);
+    }
+.m-book-body-bg {
+    background-image: url("men.jpeg");
+    height: 100vh;
+    width: 100vw;
+    background-position: 0;
+    background-size: cover;
+}
+
+#m-book-overlay {
+    position: fixed;
+    display: flex;
+    width: 40%;
+    height: 90%;
+    top: 10%;
+    left: 5%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 2;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#m-bookContent {
+    width: 40vw;
+    padding: 5vw;
+    color: blueviolet;
+    text-align: center;
+}
+
+.m-bookInput {
+    margin: 1vw;
+    height: 20px;
+    border-width: 0 0 2px 0;
+    padding: 0 0 5px 0;
+    border-color: blueviolet;
+    font-size: larger;
+    text-align: center;
+    color: blueviolet;
+    background-color: transparent;
+}
+
+    .m-bookInput:focus {
+        outline: none;
+        border-color: blueviolet;
+    }
+
+.m-bookBtn {
+    margin: 2vw 1vw 2vw 1vw;
+    font-size: larger;
+    padding: 5px;
+    color: aliceblue;
+    background-color: blueviolet;
+    cursor: pointer;
+    width:max-content
+}
+
+    .m-bookBtn:hover,
+    .m-bookBtn:focus {
+        background-color: aliceblue;
+        color: blueviolet;
+    }
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.bodyContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 100vh;
+    align-items: center;
+}
+
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw;
+    padding: 2vw;
+    margin: 2vw;
+    text-align: center;
+    font-size: larger;
+    color: blueviolet;
+}
+
+#formHead {
+    margin-bottom: 2vw;
+}
+
+.formInput {
+    margin: 1vw;
+    height: 20px;
+    border-width: 0 0 2px 0;
+    padding: 0 0 5px 0;
+    border-color: blueviolet;
+    font-size: larger;
+    text-align: center;
+    color: rgb(132, 0, 255);
+}
+
+    .formInput:focus {
+        outline: none;
+        border-color: royalblue;
+    }
+
+.formBtn {
+    margin: 2vw 1vw 2vw 1vw;
+    font-size: larger;
+    padding: 5px;
+    color: aliceblue;
+    cursor: pointer;
+    background-color: blueviolet;
+}
+    .formBtn:hover,
+    .formBtn:focus {
+        background-color: royalblue;
+    }
+.formBtn-f {
+    margin: 2vw 1vw 2vw 1vw;
+    font-size: larger;
+    padding: 5px;
+    color: aliceblue;
+    cursor: pointer;
+    background-color: rgb(255, 0, 255);
+}
+
+    .formBtn-f:hover,
+    .formBtn-f:focus {
+        background-color: royalblue;
+    }
+
+
+#imgbg {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+#overlay {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0,0, 0.9);
+    z-index: 2;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#registerContent {
+    width: 40vw;
+    padding: 5vw;
+    color: aliceblue;
+    text-align: center;
+}
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100vw;
+}
+
+.regInput {
+    margin: 1vw;
+    height: 20px;
+    border-width: 0 0 2px 0;
+    padding: 0 0 5px 0;
+    border-color: aliceblue;
+    font-size: larger;
+    text-align: center;
+    color: aliceblue;
+    background-color: transparent;
+}
+
+    .regInput:focus {
+        outline: none;
+        border-color: blueviolet;
+    }
+
+.regBtn {
+    margin: 2vw 1vw 2vw 1vw;
+    font-size: larger;
+    padding: 5px;
+    color: aliceblue;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+    .regBtn:hover,
+    .regBtn:focus {
+        background-color: aliceblue;
+        color: blueviolet;
+    }
+
+#closeBtn {
+    float: right;
+    font-size: xx-large;
+    color: aliceblue;
+    cursor: pointer;
+    text-decoration: double;
+    margin-right: 2vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+    #closeBtn:hover {
+        color: blueviolet;
+    }
+
+#radioBtn {
+    font-size: larger;
+    margin: 0 4vw 0 4vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#about-bg {
+    height: max-content;
+    width: 99vw;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#about-bg {
+    height: max-content;
+    width: 99vw;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.abt-gallery {
+    min-height: 100vh;
+    height: auto;
+    width: 60vw;
+    padding: 1vh 4vh 2vh 4vh;
+    object-fit: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.img-gallery {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+#abt-head {
+    position: fixed;
+    top: 3vh;
+}
+
+#abt-menu {
+    height: 40px;
+    width: 300px;
+    background-color: whitesmoke;
+}
+
+    #abt-menu:hover {
+        background-color: black;
+        color: white;
+    }
+
+.abt-text {
+    position: fixed;
+    top: 1vh;
+    height: 98vh;
+    overflow-y: hidden;
+    background-color: rgba(169, 169, 169, 0.9);
+    width: 34vw;
+    color: black;
+    left: 64%;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: cursive;
+    align-items: center;
+}
+
+#text-head {
+    margin-top: 4vh;
+}
+
+#texts {
+    margin: 6vh 6vh 2vh 6vh;
+    font-size: 20px;
+    font-weight: normal;
+}
+.view {
+    font-size: 20px;
+    color: red;
+}

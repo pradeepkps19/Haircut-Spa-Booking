@@ -1,0 +1,48 @@
+﻿@model DatabaseFirstApp.Models.Registeration
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <header id="m-header">
+        <h2>HAIRCUT AND SPA</h2>
+        <div class="links">
+            <span id="link">@Html.ActionLink("HOME", "Index", "Home", new { @id = "link" })</span>
+            <span id="link">@Html.ActionLink("ABOUT", "About", "Home", new { @id = "link" })</span>
+           
+        </div>
+    </header>
+    <div class="bodyContent">
+        <div class="inputForm">
+            <h2 id="formHead">Login</h2>
+
+
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "formInput", @placeholder = "Username" } })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+
+
+
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "formInput", @placeholder = "Password" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            <input type="submit" value="Submit" class="formBtn" />
+            <h5 id="link"> @Html.ActionLink("New User? Register", "Register", "Home") </h5>
+            <br />
+            <div id="formHead">
+                <label class="label-danger">@ViewBag.DuplicateMessage</label>
+            </div>
+
+        </div>
+        
+        <div id="imgbg">
+            <img src="~/Images/loginBg.jpeg" height="100%" width="100%" />
+        </div>
+    </div>
+
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

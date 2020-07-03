@@ -1,0 +1,60 @@
+﻿@model DatabaseFirstApp.Models.MService
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<a class="admin-overlay" id="logout" href="/MenServices/Logout">
+    <img src="~/Images/logouticon.png" height="40px" width="40px" />
+</a>
+<div id="bodyServcs">
+    <div class="dashHead">
+        Service Name : @Html.DisplayFor(model => model.ServiceName)
+    </div>
+
+    <div class="cust-holder">
+
+        <div class="cust-details">
+
+            <div class="detail">
+                <table>
+                    <tr>
+                        <td>
+                           Service Description
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.ServiceDescription)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Cost
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                        @Html.DisplayFor(model => model.Cost)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Image
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Image)
+                        </td>
+
+</table>
+            </div>
+
+        </div>
+    </div>
+
+</div>

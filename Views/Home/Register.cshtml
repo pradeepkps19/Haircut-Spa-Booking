@@ -1,0 +1,76 @@
+﻿@model DatabaseFirstApp.Models.Registeration
+
+@{
+    ViewBag.Title = "Register";
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div id="overlay">
+        <div id="registerContent">
+            <span id="closeBtn">@Html.ActionLink("X", "Login", "Home")</span>
+
+            <div class="registerForm">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "regInput", placeholder = "Username" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+
+
+                @Html.EditorFor(model => model.EmailID, new { htmlAttributes = new { @class = "regInput", placeholder = "EmailID" } })
+                @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger" })
+
+
+
+                @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "regInput", placeholder = "Mobile" } })
+                @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+
+
+
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "regInput", placeholder = "Create Password" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "regInput", placeholder = "Confirm Password" } })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                <div class="regInput">
+                    Male @Html.RadioButtonFor(model => model.Gender, "Male")
+
+                    Female @Html.RadioButtonFor(model => model.Gender, "Female")
+                </div>
+
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+
+                <input type="submit" value="Register" class="regBtn" />
+            </div>
+            <div class="regInput">
+                <label> @ViewBag.DuplicateMessage </label>
+            </div>
+
+        </div>
+    </div>
+    <header id="m-header">
+        <h2>HAIRCUT AND SPA</h2>
+        <div class="links">
+            <span id="link">@Html.ActionLink("Home", "Index", "Home", new { @id = "link" })</span>
+            <span id="link">@Html.ActionLink("About", "About", "Home", new { @id = "link" })</span>
+            <span id="link"> @Html.ActionLink("Contact", "Contact", "Home", new { @id = "link" })</span>
+            <span id="link">@Html.ActionLink("Login", "Login", "Home", new { @id = "link" })</span>
+        </div>
+    </header>
+
+    <div class="bodyContent">
+        <div id="imgbg">
+            <img src="~/Images/loginBg.jpeg" height="100%" width="100%" />
+        </div>
+    </div>
+
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

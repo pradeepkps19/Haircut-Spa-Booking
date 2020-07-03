@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DatabaseFirstApp.Models.BookingTbl>
+@{
+    ViewBag.Title = "Profile";
+}
+<a class="admin-overlay" id="logout" href="Logout">
+    <img src="~/Images/logouticon.png" height="40px" width="40px" />
+</a>
+<div class="head-dash">
+    <div class="dashHead">
+        BOOKED APPOINTMENTS
+    </div>
+    <div class="admin-menu">
+        <a class="a-menu-item" href="/Admin/Admin">Dashboard</a>
+        <a class="a-menu-item" href="/Registeration/Index">Customers</a>
+        <a class="a-menu-item active">Bookings</a>
+        <a class="a-menu-item" href="/MenServices/Index">M-Services</a>
+        <a class="a-menu-item" href="/WServices/Index">W-Services</a>
+    </div>
+</div>
+<div id="bodyServc">
+    <div class="services">
+        @foreach (DatabaseFirstApp.Models.BookingTbl bt in Model)
+        {<div class="a-s">
+                <div class="service-card">
+                    <div class="service1">
+                        <h1>@bt.ServiceName</h1>
+                        <h2 id="desc">@bt.CustomerName</h2>
+                    </div>
+                    <div class="service">
+                        <h3 id="desc">@bt.BookingDate.ToShortDateString()</h3>
+                        <div>
+                            <h2 id="desc">@bt.BookingTime</h2>
+
+                            @Html.ActionLink("Details", "Details", new { id = bt.BookingId }) 
+                          
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        }
+    </div>
+</div>

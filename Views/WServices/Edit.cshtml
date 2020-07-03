@@ -1,0 +1,58 @@
+﻿@model DatabaseFirstApp.Models.Service
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<a class="admin-overlay" id="logout" href="/WServices/Logout">
+    <img src="~/Images/logouticon.png" height="40px" width="40px" />
+</a>
+<div id="bodyServcs">
+    <div class="dashHead">
+        EDIT SERVICES(WOMEN)
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="editbg">
+            <div class="editContent">
+                <div class="editForm">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.ServiceId)
+
+
+                    <div class="editLabel">
+                        @Html.LabelFor(model => model.ServiceName, htmlAttributes: new { @class = "labeledit" })
+
+                        @Html.EditorFor(model => model.ServiceName, new { htmlAttributes = new { @class = "editInput" } })
+                    </div>
+
+
+                    <div class="editLabel">
+                        @Html.LabelFor(model => model.ServiceDescription, htmlAttributes: new { @class = "labeledit" })
+
+                        @Html.EditorFor(model => model.ServiceDescription, new { htmlAttributes = new { @class = "editInput" } })
+                    </div>
+                    <div class="editLabel">
+                        @Html.LabelFor(model => model.Cost, htmlAttributes: new { @class = "labeledit" })
+
+                        @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "editInput" } })
+
+                    </div>
+
+                    <div class="editLabel">
+                        @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "labeledit" })
+
+                        @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "editInput" } })
+
+                    </div>
+
+                    <input type="submit" value="Save" class="editBtn" />
+                    <input type="button" value="Cancel" class="editBtn" onclick="location.href='@Url.Action("Index","Services")'" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

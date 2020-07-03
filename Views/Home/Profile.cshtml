@@ -1,0 +1,50 @@
+﻿
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<header id="f-header">
+    <h2>HAIRCUT AND SPA</h2>
+    <div class="links">
+        <span id="link">@Html.ActionLink("HOME", "Index", "Home", new { @id = "link" })</span>
+        <span id="link"> @Html.ActionLink("SERVICES", "Service", "Home", new { @id = "link" })</span>
+        <span id="link">@Html.ActionLink("LOGOUT", "Logout", "Home", new { @id = "link" })</span>
+
+    </div>
+</header>
+<br />
+<br />
+<div class="service-content" style="text-align:center">
+    <h1>YOUR BOOKINGS</h1>
+
+
+
+
+
+    <div class="services">
+
+        @foreach (DatabaseFirstApp.Models.BookingTbl bt in Model)
+        {
+            var bdate = bt.BookingDate.ToShortDateString();
+            <div class="f-s">
+                <div class="service-card">
+                    <div class="service1">
+                        <h1>@bt.ServiceName.ToUpper()</h1>
+                        <br />
+                        <h2 id="desc">Customer : @bt.CustomerName</h2>
+                    </div>
+                    <div class="service">
+                        <h3 id="desc">DATE : @bdate</h3>
+                        <h3 id="desc">TIME : @bt.BookingTime</h3>
+                        <input type="button" class="f-bookBtn" value="Cancel" onclick="location.href='@Url.Action("Delete","BookingTbls",new{id = bt.BookingId},null)'" />
+                    </div>
+                </div>
+
+            </div>
+
+        }
+
+
+    </div>
+</div>

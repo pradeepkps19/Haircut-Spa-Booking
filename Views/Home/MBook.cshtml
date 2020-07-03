@@ -1,0 +1,86 @@
+﻿@model DatabaseFirstApp.Models.BookingTbl
+
+@{
+    ViewBag.Title = "MBook";
+}
+
+<header id="m-header">
+    <h2>HAIRCUT AND SPA</h2>
+    <div class="links">
+        <span id="link">@Html.ActionLink("HOME", "Index", "Home", new { @id = "link" })</span>
+        <span id="link"> @Html.ActionLink(Session["UserName"].ToString().ToUpper(), "MProfile", "Home", new { @id = "link" })</span>
+        <span id="link">@Html.ActionLink("LOGOUT", "Logout", "Home", new { @id = "link" })</span>
+
+    </div>
+</header>
+<div class="m-book-body-bg">
+    <div id="m-book-overlay">
+        <div id="m-bookContent">
+            @using (Html.BeginForm())
+            {
+                var sname = ViewBag.list;
+                int uid = ViewBag.id;
+                @Html.AntiForgeryToken()
+            <form name="bookForm" class="bookForm" method="POST">
+
+                <div class="bookForm">
+                    @Html.EditorFor(model => model.UserId, new { htmlAttributes = new { @class = "m-bookInput", @Value = uid, @readonly = "true" } })
+                    @Html.EditorFor(model => model.ServiceName, new { htmlAttributes = new { @class = "m-bookInput", @Value = sname, @readonly = "true" } })
+                    @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @class = "m-bookInput", @placeholder = "Customer Name" } })
+                    @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+
+                    @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "m-bookInput", @placeholder = "Mobile" } })
+                    @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                </div>
+
+
+
+                <div class="bookForm">
+                    @Html.EditorFor(model => model.BookingDate, new { htmlAttributes = new { @id = "dp", @type = "date", @class = "m-bookInput", @placeholder = "Book Date" } })
+                    @Html.ValidationMessageFor(model => model.BookingDate, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="bookForm">
+                    @Html.DropDownListFor(model => model.BookingTime, new SelectList(ViewBag.l), new { @class = "m-bookInput", @id = "dd" })
+                    @Html.ValidationMessageFor(model => model.BookingTime, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <input type="submit" value="Book" class="m-bookBtn" />
+                <div style="font-size: 20px;  color: red">
+                    <label> @ViewBag.DuplicateMessage </label>
+                </div>
+            </form>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+    <script type="text/javascript">
+        var minDate = new Date();
+        var maxDate = new Date();
+        var dd = minDate.getDate();
+        var mm = minDate.getMonth() + 1;
+        var yyyy = minDate.getFullYear();
+
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
+        var minD = yyyy + '-' + mm + '-' + dd;
+
+        maxDate.setDate(maxDate.getDate() + 10);
+        var ddm = maxDate.getDate();
+        var mmm = maxDate.getMonth() + 1;
+        var yyyym = maxDate.getFullYear();
+        if (ddm < 10) ddm = '0' + ddm;
+        if (mmm < 10) mmm = '0' + mmm;
+        var maxD = yyyym + '-' + mmm + '-' + ddm;
+        document.getElementById("dp").setAttribute("min", minD);
+        document.getElementById("dp").setAttribute("max", maxD)
+    </script>
+
+}
+
+

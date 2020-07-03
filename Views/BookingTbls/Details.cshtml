@@ -1,0 +1,73 @@
+﻿@model DatabaseFirstApp.Models.BookingTbl
+
+@{
+    ViewBag.Title = "Details";
+}
+    <a class="admin-overlay" id="logout" href="/BookingTbls/Logout">
+        <img src="~/Images/logouticon.png" height="40px" width="40px" />
+    </a>
+    <div id="bodyServcs">
+        <div class="dashHead">
+            Customer ID : @Html.DisplayFor(model => model.BookingId)
+        </div>
+        <div class="cust-holder">
+
+            <div class="cust-details">
+
+                <div class="detail">
+                    <table>
+                        <tr>
+                            <td>
+                                Service Name
+                            </td>
+                            <td> : </td>
+                            <td>
+                                @Html.DisplayFor(model => model.ServiceName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Customer Name
+                            </td>
+                            <td> : </td>
+                            <td>
+                                @Html.DisplayFor(model => model.CustomerName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Mobile
+                            </td>
+                            <td> : </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Mobile)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Booking Date
+                            </td>
+                            <td> : </td>
+                            <td>
+                                @Html.DisplayFor(model => model.BookingDate)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Booking Time
+                            </td>
+                            <td> : </td>
+                            <td>
+                                @Html.DisplayFor(model => model.BookingTime)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DatabaseFirstApp.Models.Service>
+
+@{
+    ViewBag.Title = "Index";
+}
+<a class="admin-overlay" id="logout" href="/WServices/Logout">
+    <img src="~/Images/logouticon.png" height="40px" width="40px" />
+</a>
+
+<a class="admin-overlay" id="create" href="/WServices/Create">
+    +
+</a>
+<div class="head-dash">
+    <div class="dashHead">
+        WOMEN SERVICES
+    </div>
+    <div class="admin-menu">
+        <a class="a-menu-item" href="/Admin/Admin">Dashboard</a>
+        <a class="a-menu-item" href="/Registeration/Index">Customers</a>
+        <a class="a-menu-item" href="/BookingTbls/Index">Bookings</a>
+        <a class="a-menu-item" href="/MenServices/Index">M-Services</a>
+        <a class="a-menu-item active">W-Services</a>
+    </div>
+</div>
+<div id="bodyServc">
+    <div class="services">
+        @foreach (DatabaseFirstApp.Models.Service service in Model)
+        {<div class="a-s">
+                <div class="service-card">
+                    <div class="image-holder">
+                        <img src="@Url.Content(@service.Image)" height="200px" width="250px">
+                    </div>
+                    <div class="service1">
+                        <h1>@service.ServiceName</h1>
+                        <h2 id="desc">@service.ServiceDescription</h2>
+                    </div>
+                    <div class="service">
+
+
+                        <div> <h2 id="desc">Rs. @service.Cost/-</h2></div>
+                        @Html.ActionLink("Edit", "Edit", new { id = service.ServiceId })
+                        @Html.ActionLink("Details", "Details", new { id = service.ServiceId })
+                        @Html.ActionLink("Delete", "Delete", new { id = service.ServiceId })
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+

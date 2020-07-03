@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+    <div class="bodyHome">
+        <div id="overlay-title">
+            <h1>HAIRCUT & SPA</h1>
+        </div>
+        <div class="body-row top">
+
+            <div class="head">
+                <div class="h-links">
+                    @if (Session["UserId"] != null)
+                    {
+                        <span id="h-link">@Html.ActionLink("ABOUT", "About", "Home", new { @id = "h-link" })</span>
+                        
+                        <span id="h-link">@Html.ActionLink("LOGOUT", "Logout", "Home", new { @id = "h-link" })</span>
+                    }
+                    else
+                    {
+                        <span id="h-link">@Html.ActionLink("LOGIN", "Login", "Home", new { @id = "h-link" })</span>
+                       
+                        <span id="h-link">@Html.ActionLink("ABOUT", "About", "Home", new { @id = "h-link" })</span>
+                    }
+                </div>
+            </div>
+            <div class="service-box men">
+                <a class="box m-box" href="@Url.Action("MService","Home")">    
+                         <img src="~/Images/malew.png" height="60%" width="50%">                
+                </a>
+            </div>
+        </div>
+        <div class="body-row mid">
+            <div></div>
+            <h1>SERVICE</h1>
+
+        </div>
+        <div class="body-row bot">
+            <div></div>
+            <div class="service-box women">
+                <a class="box w-box" href="@Url.Action("Service","Home")">
+                    <img src="~/Images/femalew.png" height="60%" width="50%"> 
+                </a>
+            </div>
+        </div>
+    </div>

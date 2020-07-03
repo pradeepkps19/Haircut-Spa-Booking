@@ -1,0 +1,79 @@
+﻿@model IEnumerable<DatabaseFirstApp.Models.Registeration>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<a class="admin-overlay" id="logout" href="/Registeration/Logout">
+    <img src="~/Images/logouticon.png" height="40px" width="40px" />
+</a>
+
+<div class="head-dash">
+    <div class="dashHead">
+        CUSTOMERS
+    </div>
+    <div class="admin-menu">
+        <a class="a-menu-item" href="/Admin/Admin">Dashboard</a>
+        <a class="a-menu-item active">Customers</a>
+        <a class="a-menu-item" href="/BookingTbls/Index">Bookings</a>
+        <a class="a-menu-item" href="/MenServices/Index">M-Services</a>
+        <a class="a-menu-item" href="/WServices/Index">W-Services</a>
+    </div>
+</div>
+<div id="bodyServc">
+    <div class="cust-holder">
+        @foreach (var item in Model)
+        {
+            <div class="cust-details">
+                <div class="cust-id">
+                    Customer ID : @Html.DisplayFor(modelItem => item.UserId)
+                </div>
+                <div class="detail">
+                    <table>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.EmailID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmailID)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Mobile)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Mobile)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Password)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Password)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Gender)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Gender)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>}
+    </div>
+
+</div>
